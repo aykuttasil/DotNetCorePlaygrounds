@@ -8,8 +8,6 @@ namespace string_parse_test
     {
         static void Main(string[] args)
         {
-
-            var shortCode = "N2";
             var contractOptions = "B1:Yeni Kimlik|1,N2:Eski Pasaport|3";
             Dictionary<string, string> dic = new Dictionary<String, String>();
             if (contractOptions != null)
