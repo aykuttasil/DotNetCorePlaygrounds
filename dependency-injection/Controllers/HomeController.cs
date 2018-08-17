@@ -19,23 +19,23 @@ namespace dependency_injection.Controllers
             _log = log;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             _log.write("HomeController Log");
+            await _log.WriteMessage("test 123");
+
             return View();
         }
 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";
-
             return View();
         }
 
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
