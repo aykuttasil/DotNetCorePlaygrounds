@@ -37,7 +37,15 @@ namespace dependency_injection
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
 
+            // Transient lifetime services are created each time they're requested. This lifetime works best for lightweight, stateless services.
             services.AddTransient<ILog, MyLogServices>();
+
+            // Scoped lifetime services are created once per request.
+            services.AddScoped<ILog, MyLogServices>();
+
+            // Transient lifetime services are created each time they're requested. This lifetime works best for lightweight, stateless services.
+            services.AddSingleton<ILog, MyLogServices>();
+            services.AddScoped<ILog, MyLogServices>();
 
         }
 
